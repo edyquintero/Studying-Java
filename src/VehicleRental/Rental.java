@@ -19,10 +19,6 @@ public class Rental {
         return rentalId;
     }
 
-    public Customer getCustomer() {
-        return customer;
-    }
-
     public Vehicle getVehicle() {
         return vehicle;
     }
