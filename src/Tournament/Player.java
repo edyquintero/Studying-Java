@@ -1,12 +1,12 @@
 package Tournament;
 
 public class Player {
-    int id;
-    String name;
-    int abilityPower;
-    int gamesWon;
-    int gamesLost;
-    Team team;
+    private int id;
+    private String name;
+    private int abilityPower;
+    private int gamesWon;
+    private int gamesLost;
+    private Team team;
 
     public Player(int id, String name, int abilityPower, int gamesWon, int gamesLost, Team team) {
         this.id = id;
@@ -46,15 +46,15 @@ public class Player {
     }
 
     public void winGame() {
-        this.gamesWon = gamesWon + 1;
+        this.gamesWon++;
     }
 
     public int getGamesLost() {
         return gamesLost;
     }
 
-    public void setGamesLost() {
-        this.gamesLost = gamesLost + 1;
+    public void loseGame() {
+        this.gamesLost++;
     }
 
     public Team getTeam() {
@@ -67,11 +67,12 @@ public class Player {
 
     public String showStats() {
         return "Player{" +
-                "name='" + name + '\'' +
+                "id=" + id +
+                ", name='" + name + '\'' +
                 ", abilityPower=" + abilityPower +
                 ", gamesWon=" + gamesWon +
                 ", gamesLost=" + gamesLost +
-                ", team=" + team +
+                ", team=" + (team != null ? team.getName() : "No Team") +
                 '}';
     }
 }

@@ -1,14 +1,15 @@
 package Tournament;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Team {
-    String name;
-    List<Player> players;
+    private String name;
+    private List<Player> players;
 
-    public Team(String name, List<Player> players) {
+    public Team(String name) {
         this.name = name;
-        this.players = players;
+        this.players = new ArrayList<>();
     }
 
     public String getName() {
@@ -23,25 +24,21 @@ public class Team {
         return players;
     }
 
-    public void setPlayers(List<Player> players) {
-        this.players = players;
-    }
-
     public boolean addPlayer(Player player) {
         if (players.contains(player)) {
             return false;
-        } else {
-            players.add(player);
-            return true;
         }
+        players.add(player);
+        player.setTeam(this);
+        return true;
     }
 
     public boolean removePlayer(Player player) {
-        if (players.contains(player)) {
-            players.remove(player);
-            return true;
-        } else {
+        if (!players.contains(player)) {
             return false;
         }
+        players.remove(player);
+        player.setTeam(null);
+        return true;
     }
 }
