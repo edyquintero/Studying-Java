@@ -26,5 +26,23 @@ public class StringUtilTest {
         Assert.assertEquals("", StringUtil.repeat("Hola", -1));
     }
 
+    @Test
+    public void stringIsNull() {
+        Assert.assertEquals(StringUtil.Strings.NULL, StringUtil.getStatusString(null));
+    }
 
+    @Test
+    public void stringIsZeroLength() {
+        Assert.assertEquals(StringUtil.Strings.ZERO_LENGTH, StringUtil.getStatusString(""));
+    }
+
+    @Test
+    public void stringIsOnlySpaces() {
+        Assert.assertEquals(StringUtil.Strings.STRING_ONLY_SPACES, StringUtil.getStatusString("   "));
+    }
+
+    @Test
+    public void stringIsNotNull() {
+        Assert.assertEquals(StringUtil.Strings.NOT_NULL, StringUtil.getStatusString("Hola"));
+    }
 }
