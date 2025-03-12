@@ -7,6 +7,7 @@ import jdk.jfr.Enabled;
 @Table(name = "productos")
 public class Producto {
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_producto")
@@ -21,7 +22,7 @@ public class Producto {
     private String codigoBarras;
 
     @Column(name = "precio_venta")
-    private Integer precioVenta;
+    private Double precioVenta;
 
     @Column(name = "cantidad_stock")
     private Integer cantidadStock;
@@ -64,11 +65,11 @@ public class Producto {
         this.codigoBarras = codigoBarras;
     }
 
-    public Integer getPrecioVenta() {
+    public Double getPrecioVenta() {
         return precioVenta;
     }
 
-    public void setPrecioVenta(Integer precioVenta) {
+    public void setPrecioVenta(Double precioVenta) {
         this.precioVenta = precioVenta;
     }
 
@@ -86,5 +87,13 @@ public class Producto {
 
     public void setEstado(Boolean estado) {
         this.estado = estado;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
     }
 }
