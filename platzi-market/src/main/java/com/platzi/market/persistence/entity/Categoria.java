@@ -1,7 +1,6 @@
 package com.platzi.market.persistence.entity;
 
-import jakarta.persistence.*;
-
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
@@ -14,7 +13,6 @@ public class Categoria {
     private Integer idCategoria;
 
     private String descripcion;
-
     private Boolean estado;
 
     @OneToMany(mappedBy = "categoria")

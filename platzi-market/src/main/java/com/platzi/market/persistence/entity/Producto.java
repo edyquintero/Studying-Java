@@ -1,12 +1,10 @@
 package com.platzi.market.persistence.entity;
 
-import jakarta.persistence.*;
-import jdk.jfr.Enabled;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "productos")
 public class Producto {
-
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
